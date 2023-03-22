@@ -2,7 +2,7 @@
 // @name         [ONCHE] IconBlackListed
 // @version      0.1.1
 // @description  Script pour https://onche.org, efface un message en fonction de son badge
-// @author       Lauteur
+// @author       Niourim
 // @match        https://onche.org/forum/*
 // @match        https://onche.org/topic/*
 // @icon         https://risibank.fr/cache/medias/0/4/455/45582/thumb.png
