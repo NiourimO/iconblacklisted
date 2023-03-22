@@ -9,16 +9,24 @@
 // @grant        GM_addStyle
 // ==/UserScript==
 
-const drapeauCouleurs = "https://onche.org/img/badges/maxigay.svg";
+(function() {
+    'use strict';
 
-window.addEventListener("load", (e)=>{
-    let imgClassIcon = document.getElementsByClassName("icon");
-    for (let i=0; i<imgClassIcon.length; i++){
-        let el = imgClassIcon[i];
-        if (el.getAttribute("src") == drapeauCouleurs){
-            el.closest("message").style.display = "none";
+    const drapeauCouleurs = "https://onche.org/img/badges/maxigay.svg";
+    const drapeauCuck = "https://onche.org/img/badges/cuck.svg";
+    //pour trouver le nom d'un drapeau : clic droit sur le drapeau > copier l'adresse de l'image
+    const liste = [drapeauCouleurs]; //pour plusieurs drapeaux, mettre une virgule : [drapeauCouleurs, drapeauCuck]
+
+    window.addEventListener("load", (e)=>{
+        let imgClassIcon = document.getElementsByClassName("icon");
+        for (let i=0; i<imgClassIcon.length; i++){
+            let el = imgClassIcon[i];
+            for (let j=0; j<liste.length; j++){
+                if (el.getAttribute("src") == liste[j]){
+                    el.closest(".message").style.display = "none";
+                }
+            }
         }
-    }
-})
+    })
 
-
+})();
